@@ -1,0 +1,21 @@
+{
+  "fillInfor": "VUI LÒNG ĐIỀN THÔNG TIN VỀ CÔNG TY CỦA BẠN",
+  "newContract": "Hợp đồng mới",
+  "yourContract": "Hợp đồng của bạn",
+  "companyName": "Tên công ty",
+  "name": "Họ và Tên",
+  "address": "Địa chỉ",
+  "phone": "Số điện thoại",
+  "email": "Email",
+  "domainKintone": "Tên miền kintone",
+  "choiceLang": "Chọn ngôn ngữ bạn muốn sử dụng trong Kinkan",
+  "noitice": "Lưu ý: ",
+  "needHelp": "Nếu cần hỗ trợ, vui lòng liên hệ bộ phận chăm sóc khách hàng của công ty",
+  "next": "Tiếp theo",
+  "previous": "Quay lại",
+  "pleaseWait": "Vui lòng chờ trong vài phút",
+  "requestSent": "Yêu cầu của bạn đã được gửi tới công ty của chúng tôi",
+  "sentToContractDepartment": "Yêu cầu này sẽ được gởi tới bộ phận hợp đồng",
+  "sendMail": "Chúng sẽ tôi kiểm tra và gửi mail để kích hoạt hợp đồng cho bạn.",
+  "checkMail": "Vui lòng kiểm tra mail thường xuyên(Có thể nó nằm trong hòm thư spam)"
+}

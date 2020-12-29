@@ -1,0 +1,21 @@
+{
+  "fillInfor": "あなたの会社情報を記入してください",
+  "newContract": "新規契約",
+  "yourContract": "あなたの契約書",
+  "companyName": "会社名",
+  "name": "責任者名",
+  "address": "アドレス",
+  "phone": "責任者電話番号",
+  "email": "責任者メール",
+  "domainKintone": "ドメインキントーン",
+  "choiceLang": "Kinkanで使用したい言語を選択してください。",
+  "noitice": "注：",
+  "needHelp": "サポートが必要な場合は、会社のカスタマーサービスにお問い合わせください。",
+  "next": "次へ",
+  "previous": "前へ",
+  "pleaseWait": "少々お待ちください。",
+  "requestSent": "あなたのリクエストは当社に送信されました。",
+  "sentToContractDepartment": "このリクエストは契約部門に送信されます。",
+  "sendMail": "契約を有効にするために、確認してからメールを送信します。 ",
+  "checkMail": "定期的にメールをチェックしてください。 （迷惑メールフォルダにある可能性があります）"
+}

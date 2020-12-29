@@ -1,0 +1,55 @@
+<header class="header">
+  <nav class="header-menu">
+    <div class="header__logo-box">
+      <img
+        src="./assets/img/kinkan-logo.png"
+        alt="trillo logo"
+        class="header__logo"
+        title="logo kinkan"
+      />
+    </div>
+    <ul class="header-nav">
+      <li class="header-nav__item header-nav__item--active">
+        <a
+          href="javascript:void(0)"
+          class="header-nav__link"
+          title="New Contract"
+        >
+          <svg class="header-nav__icon">
+            <use xlink:href="./assets/img/defs.svg#icon-open-book"></use>
+          </svg>
+          <span *ngIf="newContract" class="header-nav__text">{{ 'newContract' | translate }} </span>
+          <span *ngIf="!newContract" class="header-nav__text">{{ 'yourContract' | translate }} </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="header--box__left">
+    <div class="header__language-box">
+      <div class="header__language-parent">
+        <div class="custom-select icon-imgs">
+          <ng-select
+            [items]="multiLang"
+            bindLabel="lang"
+            (change)="changeLeagueOwner()"
+            bindValue="code"
+            [clearable]="false"
+            [searchable]="false"
+            class="multiLang"
+            [(ngModel)]="selectedCityName"
+          >
+            <ng-template ng-label-tmp let-item="item">
+              <img class="img-lang" [src]="item.imgLang" />
+              <b>{{ item.lang }}</b>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <img class="img-lang" [src]="item.imgLang" />
+              <b>{{ item.lang }}</b>
+            </ng-template>
+          </ng-select>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

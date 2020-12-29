@@ -1,0 +1,228 @@
+<div class="main-content">
+  <div class="main-content__bg-1"></div>
+  <div class="main-content__bg-2"></div>
+  <div class="main-content__bg-3"></div>
+  <div class="main-content__bg-4"></div>
+  <div class="main-content__bg-5"></div>
+  <div class="main-content__bg-6"></div>
+  <div class="main-content__bg-7"></div>
+  <div class="main-content__bg-8"></div>
+  <div class="main-content__bg-9"></div>
+  <div class="main-content__bg-10"></div>
+  <section class="section section-guildline">
+    <div class="heading-primary">
+      <span>New contract</span>
+    </div>
+    <div class="guildline-box">
+      <div class="guildline-content">
+        <p class="guildline-content__heading">
+          Vui lòng nhập thông tin các App trong kintone mà ở bước trước đã lấy
+        </p>
+        <form [formGroup]="configForm" (ngSubmit)="submit()" class="guildline-form">
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 社員マスタ/Staff Master </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="staffMasterID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="staffMasterToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 休日管理/Holiday Master </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="holidayMasterID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="holidayMasterToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 残業マスタ/OT Master </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="OTMasterID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="OTMasterToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 部門マスタ/Department Master </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="departmentMasterID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="departmentMasterToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 通知マスタ/Notification Master </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="notificationMasterID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="notificationMasterToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 残業管理/OT Management </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="OTManagementID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="OTManagementToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 休日管理/Holiday Management </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="holidayManagementID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="holidayManagementToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-flex__wrapper">
+            <span class="form__title"> 勤怠管理/Attendance Management </span>
+            <div class="form-flex">
+              <div class="form__group app_id">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="attendanceManagementID"
+                  placeholder="App ID"
+                  required
+                />
+              </div>
+              <div class="form__group app_token">
+                <input
+                  type="text"
+                  class="form__input"
+                  formControlName="attendanceManagementToken"
+                  placeholder="App API Token"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="btn--group">
+            <button type="button" class="btn btn--prev" (click)="back()">&larr; Quay lại</button>
+            <button type="submit" class="btn btn--primary btn--next">
+              Tiếp tục  &rarr;
+            </button>
+          </div>
+        </form>
+
+        <div class="guildline-attention">
+          <span class="guildline-attention__heading"> Lưu ý: </span>
+          <span class="guildline-attention__content">
+            Nếu cần hỗ trợ, vui lòng liên hệ bộ phận chăm sóc khách hàng của
+            công ty
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="main-content__bg-big">
+    <img src="./assets/img/Background/plane.png" alt="background big" />
+  </div>
+</div>

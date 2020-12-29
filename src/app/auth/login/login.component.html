@@ -1,0 +1,72 @@
+<div class="login-wrapper">
+    <img class="wave" src="./assets/images/wave.png" />
+    <div class="wrapper">
+        <div class="img">
+            <div class="contact">
+                <span class="contact-heading">
+                    Complex technology, but easy to use
+                </span>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span class="contact-text">
+                            kinkanexample@gmail.com
+                        </span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <span class="contact-text">0123.456.789</span>
+                    </li>
+                </ul>
+            </div>
+            <img src="./assets/images/bg.svg" />
+        </div>
+        <div class="login-content">
+            <form action="" class="form__login" [formGroup]="loginForm" autocomplete="off" (ngSubmit)="submit()">
+                <div class="logo-box">
+                    <img
+                        src="./assets/images/kinkan-logo.png"
+                        alt="kinkan logo"
+                        class="logo"
+                        title="kinkan logo"
+                    />
+                </div>
+                <div class="heading">
+                    <span class="heading-primary"> Wellcome to </span>
+                    <span class="heading-secondary"> KINKAN </span>
+                </div>
+                <div class="form__group">
+                    <input
+                        type="email"
+                        class="form__input"
+                        placeholder="Email"
+                        required
+                        formControlName="email"
+                    />
+                    <label for="email" class="form__label">
+                        Email
+                    </label>
+                </div>
+
+                <div class="form__group">
+                    <input
+                        [type]="showPass ? 'text' : 'password'"
+                        class="form__input"
+                        placeholder="Password"
+                        required
+                        formControlName="password"
+                    />
+                    <label for="password" class="form__label">
+                        Password
+                    </label>
+                    <span id="togglePass" (click)="showHide()"></span>
+                </div>
+                <a href="#0" class="forgot-pass">Forgot Password?</a>
+                <div *ngIf="showError" class="wrong-infomation">
+                    Email hoặc mật khẩu không chính xác
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

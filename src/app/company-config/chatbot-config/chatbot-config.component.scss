@@ -1,0 +1,9 @@
+li {
+  span:not(:first-child) {
+    margin-left: 2rem;
+  }
+  input{
+    margin-left: 2rem;
+  }
+}
+

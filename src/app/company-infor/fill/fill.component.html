@@ -1,0 +1,191 @@
+<div class="main-content">
+  <div class="main-content__bg-1"></div>
+  <div class="main-content__bg-2"></div>
+  <div class="main-content__bg-3"></div>
+  <div class="main-content__bg-4"></div>
+  <div class="main-content__bg-5"></div>
+  <div class="main-content__bg-6"></div>
+  <div class="main-content__bg-7"></div>
+  <div class="main-content__bg-8"></div>
+  <div class="main-content__bg-9"></div>
+  <div class="main-content__bg-10"></div>
+  <section class="section section-guildline">
+    <div class="heading-primary">
+      <span>{{ 'newContract' | translate }}</span>
+    </div>
+
+    <div class="guildline-box">
+      <div class="guildline-content">
+        <p class="guildline-content__heading">
+         {{ 'fillInfor' | translate }}
+        </p>
+
+        <form action="" [formGroup]="companyForm" (ngSubmit)="submit()" class="guildline-form">
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              id="companyName"
+              placeholder="{{ 'companyName' | translate }}"
+              formControlName="companyName"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              id="address"
+              placeholder="{{ 'address' | translate }}"
+              formControlName="address"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              id="picName"
+              placeholder="{{ 'name' | translate }}"
+              formControlName="picName"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <input
+              type="tel"
+              class="form__input"
+              id="picPhone"
+              placeholder="{{ 'phone' | translate }}"
+
+              formControlName="picPhone"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <input
+              type="email"
+              class="form__input"
+              id="picMail"
+              placeholder="{{ 'email' | translate }}"
+              formControlName="email"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              id="domainKintone"
+              formControlName="domainKintone"
+              placeholder="{{ 'domainKintone' | translate }}"
+              required
+            />
+          </div>
+
+          <div class="form__group form__radio">
+            <span class="form__group--heading">
+             {{ 'choiceLang' | translate }}
+            </span>
+            <div class="form__radio--group">
+              <div class="form__radio--item">
+                <input
+                  type="radio"
+                  name="language"
+                  formControlName="language"
+                  id="lang1"
+                  value="JP/EN"
+                  class="form__radio--input"
+                />
+                <label for="lang1" class="form__radio--label">
+                  日本語 / English
+                </label>
+              </div>
+
+              <div class="form__radio--item">
+                <input
+                  type="radio"
+                  name="language"
+                  formControlName="language"
+                  id="lang2"
+                  value="EN/JP"
+                  class="form__radio--input"
+                />
+                <label for="lang2" class="form__radio--label">
+                  English / 日本語
+                </label>
+              </div>
+
+              <div class="form__radio--item">
+                <input
+                  type="radio"
+                  name="language"
+                  formControlName="language"
+                  id="lang3"
+                  value="JP/VN"
+                  class="form__radio--input"
+                />
+                <label for="lang3" class="form__radio--label">
+                  日本語 / Tiếng Việt
+                </label>
+              </div>
+
+              <div class="form__radio--item">
+                <input
+                  type="radio"
+                  name="language"
+                  formControlName="language"
+                  id="lang4"
+                  value="EN/VN"
+                  class="form__radio--input"
+                />
+                <label for="lang4" class="form__radio--label">
+                  English / Tiếng Việt
+                </label>
+              </div>
+
+              <div class="form__radio--item">
+                <input
+                  type="radio"
+                  name="language"
+                  formControlName="language"
+                  id="lang5"
+                  value="EN/JP/VN"
+                  class="form__radio--input"
+                />
+                <label for="lang5" class="form__radio--label">
+                  English / 日本語 / Tiếng Việt
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn--group">
+            <button type="button" class="btn btn--prev">&larr; {{ 'previous' | translate }}</button>
+            <button
+              type="submit"
+              class="btn btn--primary btn--next"
+            >
+              {{ 'next' | translate }} &rarr;
+            </button>
+          </div>
+        </form>
+
+        <div class="guildline-attention">
+          <span class="guildline-attention__heading"> {{ 'noitice' | translate }} </span>
+          <span class="guildline-attention__content">
+           {{ 'needHelp' | translate }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="main-content__bg-big">
+    <img src="./assets/img/Background/plane.png" alt="background big" />
+  </div>
+</div>

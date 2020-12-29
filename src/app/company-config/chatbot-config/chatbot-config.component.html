@@ -1,0 +1,116 @@
+<div class="main-content">
+  <div class="main-content__bg-1"></div>
+  <div class="main-content__bg-2"></div>
+  <div class="main-content__bg-3"></div>
+  <div class="main-content__bg-4"></div>
+  <div class="main-content__bg-5"></div>
+  <div class="main-content__bg-6"></div>
+  <div class="main-content__bg-7"></div>
+  <div class="main-content__bg-8"></div>
+  <div class="main-content__bg-9"></div>
+  <div class="main-content__bg-10"></div>
+  <section class="section section-guildline">
+    <div class="heading-primary">
+      <span>New contract</span>
+    </div>
+
+    <div class="guildline-box">
+      <div class="guildline-content">
+        <p class="guildline-content__heading">Cài đặt Kinkan chatbot</p>
+
+        <div class="guildline-content__paragraph">
+          <span class="guildline-content__paragraph--heading">
+            Vui lòng làm theo các bước bên dưới
+          </span>
+
+          <ul class="guildline-content__step--list">
+            <li class="guildline-content__step--item">
+              1.
+              <span data-translate="_clickhere"> Nhấn vào </span>
+              <a
+                href="https://www.chatwork.com/service/packages/chatwork/subpackages/api/token.php"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="guildline-content__link"
+              >
+                đây.
+              </a>
+              <span class="guildline-content__span">
+                Nhập <b>Password</b> của <b>Chatbot</b>
+              </span>
+              <span class="guildline-content__span">
+                Nhấn <b>Display</b> , ghi chú <b>API</b> này lại
+              </span>
+            </li>
+            <li class="guildline-content__step--item">
+              <form [formGroup]="chatbotForm">
+                <span>
+                  2. Nhập API mà bạn vừa lấy được ở bước vừa rồi vào đây
+                </span>
+                <input
+                  formControlName="chatbotToken"
+                  type="text"
+                  class="form__input"
+                  style="width: 30rem; padding-left: 20px"
+                  placeholder="API"
+                  required
+                />
+              </form>
+            </li>
+            <li class="guildline-content__step--item">
+              3. Nhấn vào
+              <a
+                href="https://www.chatwork.com/service/packages/chatwork/subpackages/webhook/list.php"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="guildline-content__link"
+              >
+                đây.
+              </a>
+              <span class="guildline-content__span">
+                Nhấn <b>Create</b> và nhập các thông tin cần thiết
+              </span>
+              <span class="guildline-content__span">
+                <b>Webhook Name</b>: Tuỳ ý bạn
+              </span>
+              <span class="guildline-content__span">
+                <b>Webhook URL</b>: <b>URL</b> mà công ty chúng tôi cung cấp
+              </span>
+              <span class="guildline-content__span">
+                <b>Event: Account Event</b>
+              </span>
+              <span class="guildline-content__span"> Nhấn <b>Create</b> </span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="btn--group">
+            <button type="button" class="btn btn--prev" (click)="back()">
+              &larr; Previous
+            </button>
+            <button type="button" class="btn btn--next" (click)="next()">
+              <span>Done</span>
+              <svg class="guildline-done__icon">
+                <use
+                  xlink:href="./assets/img/checkmark.svg#icon-checkmark"
+                ></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="guildline-attention">
+          <span class="guildline-attention__heading"> Lưu ý: </span>
+          <span class="guildline-attention__content">
+            Nếu cần hỗ trợ, vui lòng liên hệ bộ phận chăm sóc khách hàng của
+            công ty
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="main-content__bg-big">
+    <img src="./assets/img/Background/plane.png" alt="background big" />
+  </div>
+</div>

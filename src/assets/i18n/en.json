@@ -1,0 +1,21 @@
+{
+  "fillInfor": "Please fill in the information about your company",
+  "newContract": "New Contract",
+  "yourContract": "Your Contract",
+  "companyName": "Company Name",
+  "name": "PIC Name",
+  "address": "Address",
+  "phone": "PIC Phone",
+  "email": "PIC Email",
+  "domainKintone": "Domain of kintone",
+  "choiceLang": "Select the language you want to use in Kinkan",
+  "noitice": "Note: ",
+  "needHelp": "If you need assistance, please contact the company's customer service.",
+  "next": "Next",
+  "previous": "Previous",
+  "pleaseWait": "Please wait a few minutes.",
+  "requestSent": "Your request has been sent to our company.",
+  "sentToContractDepartment": "This request will be sent to the contract department.",
+  "sendMail": "We will check and send email to activate the contract for you. ",
+  "checkMail": "Please check your mail regularly. (It may be in spam mailbox) "
+}
