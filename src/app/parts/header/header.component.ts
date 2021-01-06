@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
+import { UserService } from './../../services/user.service';
 import { CompanyService } from './../../services/company.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -29,17 +31,13 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public translate: TranslateService,
-    private companyService: CompanyService
+    public userService: UserService,
   ) {
     translate.addLangs(['en', 'vn', 'jp']);
     translate.setDefaultLang('en');
   }
-  newContract = true;
+  interval;
   ngOnInit(): void {
-    this.companyService.getCompany().subscribe((res) => {
-      this.newContract = false;
-      console.log(res);
-    });
   }
 
   changeLeagueOwner(): void {

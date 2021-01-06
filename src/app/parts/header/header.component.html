@@ -11,15 +11,15 @@
     <ul class="header-nav">
       <li class="header-nav__item header-nav__item--active">
         <a
-          href="javascript:void(0)"
+         [routerLink]="['/company-infor/fill']"
           class="header-nav__link"
           title="New Contract"
         >
           <svg class="header-nav__icon">
             <use xlink:href="./assets/img/defs.svg#icon-open-book"></use>
           </svg>
-          <span *ngIf="newContract" class="header-nav__text">{{ 'newContract' | translate }} </span>
-          <span *ngIf="!newContract" class="header-nav__text">{{ 'yourContract' | translate }} </span>
+          <span *ngIf="!userService.user" class="header-nav__text">{{ 'newContract' | translate }} </span>
+          <span *ngIf="userService.user" class="header-nav__text">{{ 'yourContract' | translate }} </span>
         </a>
       </li>
     </ul>

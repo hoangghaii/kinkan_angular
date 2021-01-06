@@ -1,6 +1,8 @@
 <div class="container">
   <main class="main">
-    <app-header></app-header>
+    <app-header *ngIf="showComponents"></app-header>
+    <app-loading> </app-loading>
     <router-outlet></router-outlet>
   </main>
 </div>
+

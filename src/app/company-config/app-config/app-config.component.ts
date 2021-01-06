@@ -1,3 +1,5 @@
+import { SweetAlertService } from './../../services/sweet-alert.service';
+import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { CompanyService } from './../../services/company.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,10 +15,13 @@ export class AppConfigComponent implements OnInit {
     private fb: FormBuilder,
     private companyService: CompanyService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private translateService: TranslateService,
+    private sweetAlertService: SweetAlertService
   ) {}
   configForm: FormGroup;
   companyConfig;
+  newContract = true;
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.initForm();
@@ -44,6 +49,9 @@ export class AppConfigComponent implements OnInit {
   }
   submit() {
     if (this.configForm.invalid) {
+      this.translateService.get('pleaseFillAll').subscribe((res) => {
+        this.sweetAlertService.showErrorAlert(res);
+      });
       return;
     }
     let value = this.configForm.value;
@@ -75,6 +83,7 @@ export class AppConfigComponent implements OnInit {
     this.companyService.getCompany().subscribe((res) => {
       this.companyConfig = res;
       this.patchValue(this.companyConfig);
+      this.newContract = false;
     });
   }
   patchValue(config) {

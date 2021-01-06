@@ -11,12 +11,13 @@
   <div class="main-content__bg-10"></div>
   <section class="section section-guildline">
     <div class="heading-primary">
-      <span>New contract</span>
+      <span *ngIf="newContract">{{ "newContract" | translate }}</span>
+      <span *ngIf="!newContract">{{ "yourContract" | translate }}</span>
     </div>
     <div class="guildline-box">
       <div class="guildline-content">
         <p class="guildline-content__heading">
-          Vui lòng nhập thông tin các App trong kintone mà ở bước trước đã lấy
+         {{ "fillApp" | translate }}
         </p>
         <form [formGroup]="configForm" (ngSubmit)="submit()" class="guildline-form">
           <div class="form-flex__wrapper">
@@ -27,7 +28,7 @@
                   type="text"
                   class="form__input"
                   formControlName="staffMasterID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -36,7 +37,7 @@
                   type="text"
                   class="form__input"
                   formControlName="staffMasterToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -50,7 +51,7 @@
                   type="text"
                   class="form__input"
                   formControlName="holidayMasterID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -59,7 +60,7 @@
                   type="text"
                   class="form__input"
                   formControlName="holidayMasterToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -73,7 +74,7 @@
                   type="text"
                   class="form__input"
                   formControlName="OTMasterID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -82,7 +83,7 @@
                   type="text"
                   class="form__input"
                   formControlName="OTMasterToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -96,7 +97,7 @@
                   type="text"
                   class="form__input"
                   formControlName="departmentMasterID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -105,7 +106,7 @@
                   type="text"
                   class="form__input"
                   formControlName="departmentMasterToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -119,7 +120,7 @@
                   type="text"
                   class="form__input"
                   formControlName="notificationMasterID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -128,7 +129,7 @@
                   type="text"
                   class="form__input"
                   formControlName="notificationMasterToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -142,7 +143,7 @@
                   type="text"
                   class="form__input"
                   formControlName="OTManagementID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -151,7 +152,7 @@
                   type="text"
                   class="form__input"
                   formControlName="OTManagementToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -165,7 +166,7 @@
                   type="text"
                   class="form__input"
                   formControlName="holidayManagementID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -174,7 +175,7 @@
                   type="text"
                   class="form__input"
                   formControlName="holidayManagementToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -188,7 +189,7 @@
                   type="text"
                   class="form__input"
                   formControlName="attendanceManagementID"
-                  placeholder="App ID"
+                  placeholder=" {{ 'appID' | translate }}"
                   required
                 />
               </div>
@@ -197,7 +198,7 @@
                   type="text"
                   class="form__input"
                   formControlName="attendanceManagementToken"
-                  placeholder="App API Token"
+                  placeholder=" {{ 'appApiToken' | translate }}"
                   required
                 />
               </div>
@@ -205,18 +206,19 @@
           </div>
 
           <div class="btn--group">
-            <button type="button" class="btn btn--prev" (click)="back()">&larr; Quay lại</button>
+            <button type="button" class="btn btn--prev" (click)="back()">&larr;  {{ 'previous' | translate }}</button>
             <button type="submit" class="btn btn--primary btn--next">
-              Tiếp tục  &rarr;
+               {{ 'next' | translate }}  &rarr;
             </button>
           </div>
         </form>
 
         <div class="guildline-attention">
-          <span class="guildline-attention__heading"> Lưu ý: </span>
+          <span class="guildline-attention__heading">
+            {{ "noitice" | translate }}
+          </span>
           <span class="guildline-attention__content">
-            Nếu cần hỗ trợ, vui lòng liên hệ bộ phận chăm sóc khách hàng của
-            công ty
+            {{ "needHelp" | translate }}
           </span>
         </div>
       </div>

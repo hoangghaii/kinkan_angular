@@ -11,41 +11,45 @@
   <div class="main-content__bg-10"></div>
   <section class="section section-guildline">
     <div class="heading-primary">
-      <span>New contract</span>
+       <span *ngIf="newContract">{{ "newContract" | translate }}</span>
+      <span *ngIf="!newContract">{{ "yourContract" | translate }}</span>
     </div>
 
     <div class="guildline-box">
       <div class="guildline-content">
-        <p class="guildline-content__heading">Cài đặt Kinkan chatbot</p>
+        <p class="guildline-content__heading">{{ "settingChatbot" | translate }}</p>
 
         <div class="guildline-content__paragraph">
           <span class="guildline-content__paragraph--heading">
-            Vui lòng làm theo các bước bên dưới
+            {{ "doStepBelow" | translate }}
           </span>
 
           <ul class="guildline-content__step--list">
             <li class="guildline-content__step--item">
               1.
-              <span data-translate="_clickhere"> Nhấn vào </span>
+              <span data-translate="_clickhere"></span>
               <a
                 href="https://www.chatwork.com/service/packages/chatwork/subpackages/api/token.php"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 class="guildline-content__link"
               >
-                đây.
+                {{ "clickHere" | translate }}
               </a>
               <span class="guildline-content__span">
-                Nhập <b>Password</b> của <b>Chatbot</b>
+                {{ "loginCw" | translate }}
               </span>
               <span class="guildline-content__span">
-                Nhấn <b>Display</b> , ghi chú <b>API</b> này lại
+                {{ "enterPw" | translate }}
+              </span>
+              <span class="guildline-content__span">
+               {{ "noteAPI" | translate }}
               </span>
             </li>
             <li class="guildline-content__step--item">
               <form [formGroup]="chatbotForm">
                 <span>
-                  2. Nhập API mà bạn vừa lấy được ở bước vừa rồi vào đây
+                  2. {{ "enterAPI" | translate }}
                 </span>
                 <input
                   formControlName="chatbotToken"
@@ -58,28 +62,28 @@
               </form>
             </li>
             <li class="guildline-content__step--item">
-              3. Nhấn vào
+              3.
               <a
                 href="https://www.chatwork.com/service/packages/chatwork/subpackages/webhook/list.php"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 class="guildline-content__link"
               >
-                đây.
+               {{ "clickHere" | translate }}
               </a>
               <span class="guildline-content__span">
-                Nhấn <b>Create</b> và nhập các thông tin cần thiết
+                 {{ "fillBotInfor" | translate }}
               </span>
               <span class="guildline-content__span">
-                <b>Webhook Name</b>: Tuỳ ý bạn
+                <b>Webhook Name</b>:  {{ "optional" | translate }}
               </span>
               <span class="guildline-content__span">
-                <b>Webhook URL</b>: <b>URL</b> mà công ty chúng tôi cung cấp
+                <b>Webhook URL</b>: {{ "URL" | translate }}
               </span>
               <span class="guildline-content__span">
                 <b>Event: Account Event</b>
               </span>
-              <span class="guildline-content__span"> Nhấn <b>Create</b> </span>
+              <span class="guildline-content__span"> {{ "clickCreate" | translate }}</span>
             </li>
           </ul>
         </div>
@@ -87,10 +91,10 @@
         <div>
           <div class="btn--group">
             <button type="button" class="btn btn--prev" (click)="back()">
-              &larr; Previous
+              &larr; {{ "previous" | translate }}
             </button>
             <button type="button" class="btn btn--next" (click)="next()">
-              <span>Done</span>
+              <span>{{ "done" | translate }}</span>
               <svg class="guildline-done__icon">
                 <use
                   xlink:href="./assets/img/checkmark.svg#icon-checkmark"
@@ -101,10 +105,11 @@
         </div>
 
         <div class="guildline-attention">
-          <span class="guildline-attention__heading"> Lưu ý: </span>
+           <span class="guildline-attention__heading">
+            {{ "noitice" | translate }}
+          </span>
           <span class="guildline-attention__content">
-            Nếu cần hỗ trợ, vui lòng liên hệ bộ phận chăm sóc khách hàng của
-            công ty
+            {{ "needHelp" | translate }}
           </span>
         </div>
       </div>

@@ -1,3 +1,6 @@
+import { MailService } from './../../services/mail.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SweetAlertService } from './../../services/sweet-alert.service';
 import { CompanyService } from './../../services/company.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -11,11 +14,17 @@ export class FillComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private companyService: CompanyService
+    private companyService: CompanyService,
+    private sweetAlertService: SweetAlertService,
+    private translateService: TranslateService,
+    private mailService: MailService
   ) {}
+  newContract = true;
+  companyInfor;
   companyForm: FormGroup;
   ngOnInit(): void {
     window.scrollTo(0, 0);
+    this.getCompany();
     this.initForm();
   }
   initForm() {
@@ -29,12 +38,23 @@ export class FillComponent implements OnInit {
       language: ['', Validators.required],
     });
   }
+  getCompany() {
+    this.companyService.getCompany().subscribe((res) => {
+      this.companyInfor = res;
+      this.patchValue(this.companyInfor);
+      this.newContract = false;
+    });
+  }
   submit() {
     if (this.companyForm.invalid) {
+      this.translateService.get('pleaseFillAll').subscribe((res) => {
+        this.sweetAlertService.showErrorAlert(res);
+      });
       return;
     }
     let value = this.companyForm.value;
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]=-)(*&^%$#@!~`";
+    let possible =
+      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&%$#@!';
     let pw = this.makeRandom(10, possible);
     let body = {
       email: value.email,
@@ -46,12 +66,43 @@ export class FillComponent implements OnInit {
       domain_kintone: value.domainKintone,
       language: value.language,
     };
-    console.log(body);
-    this.companyService
-      .createCompany(body)
-      .subscribe((res) => console.log(res));
 
-    this.router.navigateByUrl('/company-infor/success');
+    if (this.newContract) {
+      this.companyService.createCompany(body).subscribe((res) => {
+        let userInfor = {
+          email: res.email,
+          password: pw,
+        };
+        this.companyService.login(userInfor).subscribe((user) => {
+          let mailInfor = {
+            pic_name: res.pic_name,
+            code: res.code,
+            email: res.email,
+            password: pw,
+            token: user.token,
+          };
+          this.mailService.sendContractInfor(mailInfor).subscribe(rs => {
+            this.router.navigateByUrl('/company-infor/success');
+          });
+        })
+
+
+      }, (error) => {
+          this.translateService.get('emailExist').subscribe((res) => {
+            this.sweetAlertService.showErrorAlert(res);
+          });
+      }
+      );
+    } else {
+      this.companyInfor.email = value.email;
+      this.companyInfor.company_name = value.companyName;
+      this.companyInfor.pic_name = value.picName;
+      this.companyInfor.address = value.address;
+      this.companyInfor.pic_phone = value.picPhone;
+      this.companyService.updateCompany(this.companyInfor).subscribe((res) => {
+        this.router.navigateByUrl('/company-config/app-config');
+      });
+    }
   }
   makeRandom(lengthOfCode: number, possible: string) {
     let text = '';
@@ -59,5 +110,19 @@ export class FillComponent implements OnInit {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return text;
+  }
+  patchValue(companyInfor) {
+    this.companyForm.patchValue({
+      email: companyInfor.email,
+      companyName: companyInfor.company_name,
+      picName: companyInfor.pic_name,
+      address: companyInfor.address,
+      picPhone: companyInfor.pic_phone,
+      domainKintone: companyInfor.domain_kintone,
+      language: companyInfor.language,
+    });
+    this.companyForm.controls['domainKintone'].disable();
+    this.companyForm.controls['language'].disable();
+    this.companyForm.controls['email'].disable();
   }
 }

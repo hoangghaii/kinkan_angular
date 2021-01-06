@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 import { CompanyService } from './../../services/company.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private companyService: CompanyService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {}
   loginForm: FormGroup;
   ngOnInit(): void {
@@ -47,7 +49,19 @@ export class LoginComponent implements OnInit {
         if (res.token) {
           localStorage.setItem('token', res.token);
           this.showError = false;
-          this.router.navigateByUrl('/company-config/install');
+          this.userService.user = true;
+          this.companyService.getCompany().subscribe(res => {
+            if (res.status) {
+              if (res.admin!=1) {
+                 this.router.navigateByUrl('/company-infor/fill');
+              }
+              else
+                this.router.navigateByUrl('/admin/manage');
+            }
+            else
+              this.router.navigateByUrl('/company-config/install');
+          })
+
         }
       },
       (error) => {

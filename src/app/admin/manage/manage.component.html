@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Company Name</th>
+      <th>PIC Name</th>
+      <th>PIC Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Language</th>
+      <th>Code</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of listCompany; let i = index">
+      <td>{{i}}</td>
+      <td>{{company.company_name}}</td>
+      <td>{{company.pic_name}}</td>
+      <td>{{company.pic_phone}}</td>
+      <td>{{company.email}}</td>
+      <td>{{company.address}}</td>
+      <td>{{company.language}}</td>
+      <td>{{company.code}}</td>
+      <td>
+        <button (click)="disable(company.id)" *ngIf="company.status==1">Disable</button>
+        <button (click)="enable(company.id)" *ngIf="company.status==0">Enable</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -143,6 +143,11 @@ body {
   background-color: #ff2e58;
   min-width: 17.5rem;
 }
+.btn--green {
+  font-size: 1.6rem;
+  display: block;
+  margin: 0 auto;
+}
 .guildline-box {
   width: 100%;
   position: relative;
@@ -326,10 +331,11 @@ body {
   color: #777;
   transition: all 0.25s;
 }
-.form__radio--label:hover {
+.form__radio--label--hover:hover {
   border: 1.2px solid #e7516f;
   background-color: #e7516f;
   color: #fff;
+  cursor: pointer;
 }
 .form__radio--input:checked + .form__radio--label {
   border: 1.2px solid #e7516f;
@@ -704,5 +710,47 @@ body {
   width: 30rem;
 }
 .app_id {
-  width: 10rem;
+  width: 12rem;
+}
+.t-center {
+  text-align: center !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.my-small {
+  margin-bottom: 4rem !important;
+  margin-top: 4rem !important;
+}
+.mt-small {
+  margin-top: 4rem !important;
+}
+.mb-small {
+  margin-bottom: 4rem !important;
+}
+.guildline-congratulation {
+  background-color: #fff;
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+.guildline-congratulation__box-1 {
+  width: 14rem;
+  margin: 3rem auto;
+}
+.guildline-congratulation__box-3 {
+  width: 40rem;
+  margin: 3rem auto;
+}
+.guildline-congratulation__box-2 {
+  width: 27rem;
+  margin-top: -4rem;
+}
+.guildline-congratulation__img {
+  width: 100%;
+  object-fit: cover;
+}
+.fs-2 {
+  font-size: 2rem !important;
 }

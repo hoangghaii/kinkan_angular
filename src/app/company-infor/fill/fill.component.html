@@ -11,16 +11,20 @@
   <div class="main-content__bg-10"></div>
   <section class="section section-guildline">
     <div class="heading-primary">
-      <span>{{ 'newContract' | translate }}</span>
+      <span *ngIf="newContract">{{ "newContract" | translate }}</span>
+      <span *ngIf="!newContract">{{ "yourContract" | translate }}</span>
     </div>
-
     <div class="guildline-box">
       <div class="guildline-content">
         <p class="guildline-content__heading">
-         {{ 'fillInfor' | translate }}
+          {{ "fillInfor" | translate }}
         </p>
-
-        <form action="" [formGroup]="companyForm" (ngSubmit)="submit()" class="guildline-form">
+        <form
+          action=""
+          [formGroup]="companyForm"
+          (ngSubmit)="submit()"
+          class="guildline-form"
+        >
           <div class="form__group">
             <input
               type="text"
@@ -60,12 +64,10 @@
               class="form__input"
               id="picPhone"
               placeholder="{{ 'phone' | translate }}"
-
               formControlName="picPhone"
               required
             />
           </div>
-
           <div class="form__group">
             <input
               type="email"
@@ -76,7 +78,6 @@
               required
             />
           </div>
-
           <div class="form__group">
             <input
               type="text"
@@ -87,10 +88,9 @@
               required
             />
           </div>
-
           <div class="form__group form__radio">
             <span class="form__group--heading">
-             {{ 'choiceLang' | translate }}
+              {{ "choiceLang" | translate }}
             </span>
             <div class="form__radio--group">
               <div class="form__radio--item">
@@ -102,11 +102,10 @@
                   value="JP/EN"
                   class="form__radio--input"
                 />
-                <label for="lang1" class="form__radio--label">
+                <label for="lang1" class="form__radio--label" [ngClass]="newContract? 'form__radio--label--hover':''">
                   日本語 / English
                 </label>
               </div>
-
               <div class="form__radio--item">
                 <input
                   type="radio"
@@ -116,11 +115,10 @@
                   value="EN/JP"
                   class="form__radio--input"
                 />
-                <label for="lang2" class="form__radio--label">
+                <label for="lang2" class="form__radio--label" [ngClass]="newContract? 'form__radio--label--hover':''">
                   English / 日本語
                 </label>
               </div>
-
               <div class="form__radio--item">
                 <input
                   type="radio"
@@ -130,11 +128,10 @@
                   value="JP/VN"
                   class="form__radio--input"
                 />
-                <label for="lang3" class="form__radio--label">
+                <label for="lang3" class="form__radio--label" [ngClass]="newContract? 'form__radio--label--hover':''">
                   日本語 / Tiếng Việt
                 </label>
               </div>
-
               <div class="form__radio--item">
                 <input
                   type="radio"
@@ -144,11 +141,10 @@
                   value="EN/VN"
                   class="form__radio--input"
                 />
-                <label for="lang4" class="form__radio--label">
+                <label for="lang4" class="form__radio--label" [ngClass]="newContract? 'form__radio--label--hover':''">
                   English / Tiếng Việt
                 </label>
               </div>
-
               <div class="form__radio--item">
                 <input
                   type="radio"
@@ -158,28 +154,27 @@
                   value="EN/JP/VN"
                   class="form__radio--input"
                 />
-                <label for="lang5" class="form__radio--label">
+                <label for="lang5" class="form__radio--label" [ngClass]="newContract? 'form__radio--label--hover':''">
                   English / 日本語 / Tiếng Việt
                 </label>
               </div>
             </div>
           </div>
-
           <div class="btn--group">
-            <button type="button" class="btn btn--prev">&larr; {{ 'previous' | translate }}</button>
-            <button
-              type="submit"
-              class="btn btn--primary btn--next"
-            >
-              {{ 'next' | translate }} &rarr;
+            <button type="button" class="btn btn--prev">
+              &larr; {{ "previous" | translate }}
+            </button>
+            <button type="submit" class="btn btn--primary btn--next">
+              {{ "next" | translate }} &rarr;
             </button>
           </div>
         </form>
-
         <div class="guildline-attention">
-          <span class="guildline-attention__heading"> {{ 'noitice' | translate }} </span>
+          <span class="guildline-attention__heading">
+            {{ "noitice" | translate }}
+          </span>
           <span class="guildline-attention__content">
-           {{ 'needHelp' | translate }}
+            {{ "needHelp" | translate }}
           </span>
         </div>
       </div>
