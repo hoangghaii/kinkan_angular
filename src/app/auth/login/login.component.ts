@@ -8,7 +8,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private companyService: CompanyService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private location: Location
   ) {}
   loginForm: FormGroup;
   ngOnInit(): void {
@@ -50,18 +51,13 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', res.token);
           this.showError = false;
           this.userService.user = true;
-          this.companyService.getCompany().subscribe(res => {
+          this.companyService.getCompany().subscribe((res) => {
             if (res.status) {
-              if (res.admin!=1) {
-                 this.router.navigateByUrl('/company-infor/fill');
-              }
-              else
-                this.router.navigateByUrl('/admin/manage');
-            }
-            else
-              this.router.navigateByUrl('/company-config/install');
-          })
-
+              if (res.admin != 1) {
+                this.location.back();
+              } else this.router.navigateByUrl('/admin/manage');
+            } else this.router.navigateByUrl('/company-config/install');
+          });
         }
       },
       (error) => {

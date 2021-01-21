@@ -48,5 +48,6 @@
   "congrate": "Congratulations, your company was able to use Kinkan.",
   "done": "Done",
   "updated": "Your contract has been successfully updated",
-  "downloadGuideline": "Please read more about \"KinKan manual\""
+  "downloadGuideline": "Please read more about \"KinKan manual\"",
+  "plzLoginAgain": "Your login session has expired, please login again"
 }

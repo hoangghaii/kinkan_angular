@@ -51,6 +51,7 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.companyService.logOut().subscribe(res => {
       localStorage.removeItem("token")
+      this.userService.user = null;
       this.router.navigate(['/login'])
       this.userService.isShow = false;
     })

@@ -31,7 +31,7 @@
 }
 
 .btn__logout {
-  margin-top: 1rem;
+  margin: 1rem auto 0;
 }
 .sp-menu {
   position: fixed;
@@ -57,7 +57,7 @@
 .modal {
   padding: 2rem 1rem;
   position: absolute;
-  right: -40px;
+  right: -6%;
   top: 12%;
   transform: translateX(-50%);
 
@@ -66,7 +66,7 @@
   border-radius: 8px;
   box-shadow: 0 1rem 2rem rgba(#000, 0.5);
 
-  width: 22rem;
+  width: 24rem;
   text-align: center;
 
   &__user-box {
