@@ -11,15 +11,19 @@
     <ul class="header-nav">
       <li class="header-nav__item header-nav__item--active">
         <a
-         [routerLink]="['/company-infor/fill']"
+          [routerLink]="['/company-infor/fill']"
           class="header-nav__link"
           title="New Contract"
         >
           <svg class="header-nav__icon">
             <use xlink:href="./assets/img/defs.svg#icon-open-book"></use>
           </svg>
-          <span *ngIf="!userService.user" class="header-nav__text">{{ 'newContract' | translate }} </span>
-          <span *ngIf="userService.user" class="header-nav__text">{{ 'yourContract' | translate }} </span>
+          <span *ngIf="!userService.user" class="header-nav__text"
+            >{{ "newContract" | translate }}
+          </span>
+          <span *ngIf="userService.user" class="header-nav__text"
+            >{{ "yourContract" | translate }}
+          </span>
         </a>
       </li>
     </ul>
@@ -51,5 +55,55 @@
         </div>
       </div>
     </div>
+
+    <div class="user__box" *ngIf="userService.user">
+      <div class="user" (click)="userService.isShow = true">
+        <img
+          src="./assets/images/profile.svg"
+          alt="user image"
+          class="user__img"
+        />
+      </div>
+      <div class="sp-menu" [ngClass]="userService.isShow ? 'on' : ''">
+        <div
+          class="sp-menu__overlay"
+          (click)="userService.isShow = false"
+        ></div>
+        <div class="modal">
+          <div class="modal__user-box">
+            <div class="modal__user-info">
+              <span class="modal__user-name">{{userLogin.pic_name}} </span>
+            </div>
+            <div class="modal__img-box">
+              <img
+                src="./assets/images/profile.svg"
+                alt="user img"
+                class="modal__img"
+                title="user image"
+              />
+            </div>
+          </div>
+
+          <a href="#0" class="modal__changePass">
+            <svg class="modal__changePass-icon">
+              <use
+                xlink:href="./assets/img/symbol-defs.svg#icon-sound-mix"
+              ></use>
+            </svg>
+            <span class="modal__changePass-heading">Change Password</span>
+          </a>
+
+          <button class="btn btn__logout" (click)="logOut()" >Log out</button>
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn__login"
+      *ngIf="!userService.user"
+      routerLink="/login"
+    >
+      Login
+    </button>
   </div>
 </header>

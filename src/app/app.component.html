@@ -1,8 +1,7 @@
-<div class="container">
+<div class="container" >
   <main class="main">
-    <app-header *ngIf="showComponents"></app-header>
+    <app-header *ngIf="router.url != '/login' && router.url != '/company-config/redirect' && router.url != '/admin/manage' && router.url != '/admin/access-denied'"></app-header>
     <app-loading> </app-loading>
     <router-outlet></router-outlet>
   </main>
 </div>
-

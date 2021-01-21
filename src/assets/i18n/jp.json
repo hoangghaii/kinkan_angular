@@ -22,6 +22,7 @@
   "checkMail": "定期的にメールをチェックしてください。 （迷惑メールフォルダにある可能性があります）",
   "downloadAndInstall": "ダウンロードおよびインストール",
   "downLoadTemplate": "以下のテンプレートパッケージをダウンロードしてください。",
+  "downloadGuideline": "さらにKinKanマニュアルについてご参照ください。",
   "installOnKintone": "次に、以下の手順に従ってkintoneにインストールします。",
   "clickToDownLoad": "ここをクリックしてダウンロードします",
   "appTemplate": "kintone Administrationページに入ります。　→　App Templates。",

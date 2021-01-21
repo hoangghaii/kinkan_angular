@@ -26,9 +26,12 @@ export class RequestInterceptor implements HttpInterceptor {
     const headers =
       token && isApiUrl
         ? {
-            Authorization: `Bearer ${token}`,
+		'Content-Type': "application/json",
+            'Authorization': `Bearer ${token}`,
           }
-        : {};
+        : {
+		'Content-Type': "application/json"}
+;
 
     request = request.clone({
       setHeaders: headers,

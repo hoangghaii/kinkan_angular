@@ -32,15 +32,27 @@ export class HeaderComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     public userService: UserService,
+    public companyService: CompanyService,
+    private router :Router
   ) {
     translate.addLangs(['en', 'vn', 'jp']);
     translate.setDefaultLang('en');
   }
   interval;
+  userLogin
   ngOnInit(): void {
+    this.companyService.getCompany().subscribe( res =>{
+      this.userLogin = res
+    })
   }
-
   changeLeagueOwner(): void {
     this.translate.use(this.selectedCityName);
+  }
+  logOut() {
+    this.companyService.logOut().subscribe(res => {
+      localStorage.removeItem("token")
+      this.router.navigate(['/login'])
+      this.userService.isShow = false;
+    })
   }
 }

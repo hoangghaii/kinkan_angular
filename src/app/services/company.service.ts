@@ -54,6 +54,19 @@ export class CompanyService extends HttpService {
       })
     );
   }
+  logOut() {
+    const url = this.apiUrl + `logout`;
+    return this.http.post(url, {}).pipe(
+      map((res: any) => {
+        if (res) {
+          return res;
+        }
+      }),
+      catchError((e) => {
+        return this.handleError(e);
+      })
+    );
+  }
   updateCompany(companyInfor) {
     const url = this.apiUrl + `config`;
     return this.http.put(url, companyInfor).pipe(

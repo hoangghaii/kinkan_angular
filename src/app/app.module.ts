@@ -16,11 +16,12 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LoadingComponent } from './parts/loading/loading.component';
+import { FooterComponent } from './parts/footer/footer.component';
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoadingComponent,],
+  declarations: [AppComponent, HeaderComponent, LoadingComponent, FooterComponent,],
   imports: [
     NgSelectModule,
     BrowserModule,
