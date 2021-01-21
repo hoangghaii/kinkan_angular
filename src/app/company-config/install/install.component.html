@@ -1,185 +1,134 @@
-<div class="main-content">
-  <div class="main-content__bg-1 mouse-effect" data-speed="-5"></div>
-  <div class="main-content__bg-2 mouse-effect" data-speed="5"></div>
-  <div class="main-content__bg-3 mouse-effect" data-speed="2"></div>
-  <div class="main-content__bg-4 mouse-effect" data-speed="6"></div>
-  <div class="main-content__bg-5 mouse-effect" data-speed="8"></div>
-  <div class="main-content__bg-6 mouse-effect" data-speed="-2"></div>
-  <div class="main-content__bg-7 mouse-effect" data-speed="-4"></div>
-  <div class="main-content__bg-8 mouse-effect" data-speed="-9"></div>
-  <div class="main-content__bg-9 mouse-effect" data-speed="-6"></div>
-  <div class="main-content__bg-10 mouse-effect" data-speed="-7"></div>
-  <section class="section section-guildline">
-    <div class="heading-primary">
-      <span>{{ "yourContract" | translate }}</span>
-    </div>
-    <div class="guildline-box">
-      <div class="guildline-content">
-        <p
-          class="guildline-content__heading"
-          data-translate="_downloadAndInstall"
+<section class="guildline">
+  <h3 class="heading-secondary" data-translate="_downloadAndInstall">
+    {{ "downloadAndInstall" | translate }}
+  </h3>
+
+  <div class="guildline__paragraph">
+    <p class="guildline__paragraph--heading">
+      <span class="guildline__span" data-translate="_downloadTemplate">
+        {{ "downLoadTemplate" | translate }}
+      </span>
+      <span class="guildline__span" data-translate="_installInstructions">
+        {{ "installOnKintone" | translate }}
+      </span>
+    </p>
+
+    <a
+      href="#0"
+      class="guildline__link"
+      data-translate="_clickDownload"
+      (click)="getPackage($event)"
+    >
+      {{ "clickToDownLoad" | translate }}
+    </a>
+
+    <ul class="guildline__step--list">
+      <li class="guildline__step--item">
+        <span
+          class="guildline__span guildline__step--heading"
+          data-translate="_step1of1of1"
         >
-          {{ "downloadAndInstall" | translate }}
-        </p>
+          1. {{ "appTemplate" | translate }}
+        </span>
+        <span
+          class="guildline__span guildline__span-2"
+          data-translate="_step1of1of2"
+        >
+          {{ "importKinkan" | translate }}
+        </span>
+        <img
+          src="./assets/img/Gif/import_jsEdit.gif"
+          alt="guildline step"
+          class="guildline__gif"
+        />
+      </li>
 
-        <div class="guildline-content__paragraph">
-          <p class="guildline-content__paragraph--heading">
-            <span
-              class="guildline-content__span"
-              data-translate="_downloadTemplate"
-            >
-              {{ "downLoadTemplate" | translate }}
-            </span>
-            <span
-              class="guildline-content__span"
-              data-translate="_installInstructions"
-            >
-              {{ "installOnKintone" | translate }}
-            </span>
-          </p>
-          <a
-            href="#0"
-            class="guildline-content__link"
-            data-translate="_clickDownload"
-            (click)="getPackage($event)"
+      <li class="guildline__step--item">
+        <span
+          class="guildline__span guildline__step--heading"
+          data-translate="_step1of1of1"
+        >
+          1. {{ "appTemplate" | translate }}
+        </span>
+        <span
+          class="guildline__span guildline__span-2"
+          data-translate="_step1of1of2"
+        >
+          {{ "importKinkan" | translate }}
+        </span>
+        <img
+          src="./assets/img/Gif/impot_template.gif"
+          alt="guildline step"
+          class="guildline__gif"
+        />
+      </li>
+
+      <li class="guildline__step--item">
+        <span class="guildline__step--left">
+          <span
+            class="guildline__span guildline__step--heading"
+            data-translate="_step1of2of1"
           >
-            {{ "clickToDownLoad" | translate }}
-          </a>
-          <ul class="guildline-content__step--list">
-            <li class="guildline-content__step--item">
-              <span
-                class="guildline-content__span guildline-content__step--heading"
-                data-translate="_step1of1of1"
-              >
-                1. {{ "appTemplate" | translate }}
-              </span>
-              <span
-                class="guildline-content__span guildline-content__span-2"
-                data-translate="_step1of1of2"
-              >
-                {{ "importKinkan" | translate }}
-              </span>
-              <img
-                src="./assets/img/Gif/import_jsEdit.gif"
-                alt="guildline step"
-                class="guildline__gif"
-              />
-            </li>
-            <li class="guildline-content__step--item">
-              <span
-                class="guildline-content__span guildline-content__step--heading"
-                data-translate="_step1of1of1"
-              >
-                1. {{ "appTemplate" | translate }}
-              </span>
-              <span
-                class="guildline-content__span guildline-content__span-2"
-                data-translate="_step1of1of2"
-              >
-                {{ "importKinkan" | translate }}
-              </span>
-              <img
-                src="./assets/img/Gif/impot_template.gif"
-                alt="guildline step"
-                class="guildline__gif"
-              />
-            </li>
-            <li class="guildline-content__step--item">
-              <span class="guildline-content__step--left">
-                <span
-                  class="guildline-content__span guildline-content__step--heading"
-                  data-translate="_step1of2of1"
-                >
-                  2. {{ "createAppPage" | translate }}
-                </span>
-                <span
-                  class="guildline-content__span guildline-content__span-2"
-                  data-translate="_step1of2of2"
-                >
-                  {{ "choiceTemplate" | translate }}
-                </span>
-              </span>
-              <span class="guildline-content__step--right">
-                <img
-                  src="./assets/img/Gif/create_app.gif"
-                  alt="guildline step"
-                  class="guildline__gif"
-                />
-              </span>
-            </li>
-            <li class="guildline-content__step--item">
-              <span
-                class="guildline-content__span guildline-content__step--heading"
-                data-translate="_step1of3of1"
-              >
-                3. {{ "appManagement" | translate }}
-              </span>
-              <span
-                class="guildline-content__span guildline-content__span-2"
-                data-translate="_step1of3of2"
-              >
-                {{ "appSetting" | translate }}
-              </span>
-              <span
-                class="guildline-content__span guildline-content__span-2"
-                data-translate="_step1of3of3"
-              >
-                {{ "generateToken" | translate }}
-              </span>
-              <img
-                src="./assets/img/Gif/get_api.gif"
-                alt="guildline step"
-                class="guildline__gif"
-              />
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="btn--group">
-            <button
-              type="button"
-              class="btn btn--primary btn--next"
-              (click)="next()"
-            >
-              <span data-translate="_next"> {{ "next" | translate }} &rarr; </span>
-            </button>
-          </div>
-        </div>
-
-        <div class="guildline-attention">
-          <span class="guildline-attention__heading">
-            {{ "noitice" | translate }}
+            2. {{ "createAppPage" | translate }}
           </span>
-          <span class="guildline-attention__content">
-            {{ "needHelp" | translate }}
+          <span
+            class="guildline__span guildline__span-2"
+            data-translate="_step1of2of2"
+          >
+            {{ "choiceTemplate" | translate }}
           </span>
-        </div>
-	<div class="footer">
-          <div class="footer__left">
-            <div class="footer__item">
-              <span class="footer__heading"> Email: </span>
-              <a href="mailto:ivskinkan@indivisys.jp" class="footer__link">
-                ivskinkan@indivisys.jp
-              </a>
-            </div>
-            <div class="footer__item">
-              <span class="footer__heading"> Phone: </span>
-              <a href="tel:+123456789" class="footer__link"> 0123456789 </a>
-            </div>
-          </div>
-          <p class="copyright">
-            <span class="footer__heading">
-              <span style="font-size: 2rem; font-weight: 700">&copy;</span>
-              Copyright 2021 by
-            </span>
-            <a href="https://ivskinkan.com" class="footer__link"> ivskinkan. </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="main-content__bg-big">
-    <img src="./assets/img/Background/plane.png" alt="background big" />
+        </span>
+        <span class="guildline__step--right">
+          <img
+            src="./assets/img/Gif/create_app.gif"
+            alt="guildline step"
+            class="guildline__gif"
+          />
+        </span>
+      </li>
+
+      <li class="guildline__step--item">
+        <span
+          class="guildline__span guildline__step--heading"
+          data-translate="_step1of3of1"
+        >
+          3. {{ "appManagement" | translate }}
+        </span>
+        <span
+          class="guildline__span guildline__span-2"
+          data-translate="_step1of3of2"
+        >
+          {{ "appSetting" | translate }}
+        </span>
+        <span
+          class="guildline__span guildline__span-2"
+          data-translate="_step1of3of3"
+        >
+          {{ "generateToken" | translate }}
+        </span>
+        <img
+          src="./assets/img/Gif/get_api.gif"
+          alt="guildline step"
+          class="guildline__gif"
+        />
+      </li>
+    </ul>
   </div>
-</div>
+
+  <div>
+    <div class="btn--group">
+      <button type="button" class="btn btn--primary btn--next" (click)="next()">
+        <span data-translate="_next"> {{ "next" | translate }} &rarr; </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="guildline-attention">
+    <span class="guildline-attention__heading">
+      {{ "noitice" | translate }}
+    </span>
+    <span class="guildline-attention__content">
+      {{ "needHelp" | translate }}
+    </span>
+  </div>
+</section>

@@ -1,84 +1,38 @@
-<div class="main-content">
-  <div class="main-content__bg-1 mouse-effect" data-speed="-5"></div>
-  <div class="main-content__bg-2 mouse-effect" data-speed="5"></div>
-  <div class="main-content__bg-3 mouse-effect" data-speed="2"></div>
-  <div class="main-content__bg-4 mouse-effect" data-speed="6"></div>
-  <div class="main-content__bg-5 mouse-effect" data-speed="8"></div>
-  <div class="main-content__bg-6 mouse-effect" data-speed="-2"></div>
-  <div class="main-content__bg-7 mouse-effect" data-speed="-4"></div>
-  <div class="main-content__bg-8 mouse-effect" data-speed="-9"></div>
-  <div class="main-content__bg-9 mouse-effect" data-speed="-6"></div>
-  <div class="main-content__bg-10 mouse-effect" data-speed="-7"></div>
-  <section class="section section-guildline">
-    <div class="heading-primary">
-      <span>{{ "newContract" | translate }}</span>
-    </div>
-
-    <!-- src="./assets/img/tht1.png" -->
-
-    <div class="guildline-box">
-      <div class="guildline-content guildline-congratulation">
-        <div class="guildline-congratulation__box-3">
-          <img
-            src="./assets/img/tht5.png"
-            alt="congratulations image"
-            class="guildline-congratulation__img"
-          />
-        </div>
-        <p class="guildline-content__heading t-center d-block mt-small">
-          {{ "pleaseWait" | translate }}
-        </p>
-        <div class="guildline-content__paragraph mb-small">
-          <span class="guildline-content__span">
-            {{ "requestSent" | translate }}
-          </span>
-          <span class="guildline-content__span">
-            {{ "sentToContractDepartment" | translate }}
-          </span>
-          <span class="guildline-content__span">
-            {{ "sendMail" | translate }}
-          </span>
-          <span class="guildline-content__span">
-            {{ "checkMail" | translate }}
-          </span>
-        </div>
-        <button type="button" class="btn btn--green" (click)="back()">
-          &larr; {{ "previous" | translate }}
-        </button>
-
-        <div class="guildline-attention">
-          <span class="guildline-attention__heading">
-            {{ "noitice" | translate }}
-          </span>
-          <span class="guildline-attention__content">
-            {{ "needHelp" | translate }}
-          </span>
-        </div>
-	<div class="footer">
-          <div class="footer__left">
-            <div class="footer__item">
-              <span class="footer__heading"> Email: </span>
-              <a href="mailto:ivskinkan@indivisys.jp" class="footer__link">
-                ivskinkan@indivisys.jp
-              </a>
-            </div>
-            <div class="footer__item">
-              <span class="footer__heading"> Phone: </span>
-              <a href="tel:+123456789" class="footer__link"> 0123456789 </a>
-            </div>
-          </div>
-          <p class="copyright">
-            <span class="footer__heading">
-              <span style="font-size: 2rem; font-weight: 700">&copy;</span>
-              Copyright 2021 by
-            </span>
-            <a href="https://ivskinkan.com" class="footer__link"> ivskinkan. </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="main-content__bg-big">
-    <img src="./assets/img/Background/plane.png" alt="background big" />
+<section class="guildline">
+  <div class="guildline-congratulation__box-3">
+    <img
+      src="./assets/img/tht5.png"
+      alt="congratulations image"
+      class="guildline-congratulation__img"
+    />
   </div>
-</div>
+  <p class="guildline__heading t-center d-block mt-small">
+    {{ "pleaseWait" | translate }}
+  </p>
+  <div class="guildline__paragraph mb-small">
+    <span class="guildline__span">
+      {{ "requestSent" | translate }}
+    </span>
+    <span class="guildline__span">
+      {{ "sentToContractDepartment" | translate }}
+    </span>
+    <span class="guildline__span">
+      {{ "sendMail" | translate }}
+    </span>
+    <span class="guildline__span">
+      {{ "checkMail" | translate }}
+    </span>
+  </div>
+  <button type="button" class="btn btn--green" (click)="back()">
+    &larr; {{ "previous" | translate }}
+  </button>
+
+  <div class="guildline-attention">
+    <span class="guildline-attention__heading">
+      {{ "noitice" | translate }}
+    </span>
+    <span class="guildline-attention__content">
+      {{ "needHelp" | translate }}
+    </span>
+  </div>
+</section>

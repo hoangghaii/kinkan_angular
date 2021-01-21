@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(public router: Router, private userService: UserService) {}
+  constructor(public router: Router, public userService: UserService) {}
   ngOnInit(): void {}
   title = 'Kinkan';
 }
