@@ -8,30 +8,75 @@
 ></app-header>
 
 <main class="main">
-  <div class="main-content__bg-1 mouse-effect" data-speed="-5"></div>
-  <div class="main-content__bg-2 mouse-effect" data-speed="5"></div>
-  <div class="main-content__bg-3 mouse-effect" data-speed="2"></div>
-  <div class="main-content__bg-4 mouse-effect" data-speed="6"></div>
-  <div class="main-content__bg-5 mouse-effect" data-speed="8"></div>
-  <div class="main-content__bg-6 mouse-effect" data-speed="-2"></div>
-  <div class="main-content__bg-7 mouse-effect" data-speed="-4"></div>
-  <div class="main-content__bg-8 mouse-effect" data-speed="-9"></div>
-  <div class="main-content__bg-9 mouse-effect" data-speed="-6"></div>
-  <div class="main-content__bg-10 mouse-effect" data-speed="-7"></div>
+  <div
+    class="main-content__bg-1 mouse-effect"
+    data-speed="-5"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-2 mouse-effect"
+    data-speed="5"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-3 mouse-effect"
+    data-speed="2"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-4 mouse-effect"
+    data-speed="6"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-5 mouse-effect"
+    data-speed="8"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-6 mouse-effect"
+    data-speed="-2"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-7 mouse-effect"
+    data-speed="-4"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-8 mouse-effect"
+    data-speed="-9"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-9 mouse-effect"
+    data-speed="-6"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
+  <div
+    class="main-content__bg-10 mouse-effect"
+    data-speed="-7"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  ></div>
 
-  <h2 class="heading-primary">
+  <h2
+    class="heading-primary"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  >
     <span *ngIf="!userService.user">{{ "newContract" | translate }}</span>
     <span *ngIf="userService.user">{{ "yourContract" | translate }}</span>
   </h2>
 
   <router-outlet></router-outlet>
-  <app-loading> </app-loading>
+  <app-loading></app-loading>
 
-  <div class="main-content__bg-big">
+  <div
+    class="main-content__bg-big"
+    *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
+  >
     <img src="./assets/img/Background/plane.png" alt="background big" />
   </div>
 </main>
 <app-footer
   *ngIf="router.url != '/login' && router.url != '/company-config/redirect'"
 ></app-footer>
-

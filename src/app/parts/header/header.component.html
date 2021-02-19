@@ -90,10 +90,10 @@
                 xlink:href="./assets/img/symbol-defs.svg#icon-sound-mix"
               ></use>
             </svg>
-            <span class="modal__changePass-heading">Change Password</span>
+            <span class="modal__changePass-heading">{{ "changePw" | translate }}</span>
           </a>
 
-          <button class="btn btn__logout" (click)="logOut()" >Log out</button>
+          <button class="btn btn__logout" (click)="logOut()" >{{ "logout" | translate }}</button>
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@
       *ngIf="!userService.user"
       routerLink="/login"
     >
-      Login
+      {{ "login" | translate }}
     </button>
   </div>
 </header>

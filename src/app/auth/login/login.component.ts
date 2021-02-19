@@ -1,3 +1,4 @@
+import { TokenService } from './../../services/token.service';
 import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 import { CompanyService } from './../../services/company.service';
@@ -17,12 +18,14 @@ import { Location } from '@angular/common';
 export class LoginComponent implements OnInit {
   showPass = false;
   showError = false;
+  expiredDate;
   constructor(
     private fb: FormBuilder,
     private companyService: CompanyService,
     private router: Router,
     private userService: UserService,
-    private location: Location
+    private location: Location,
+    private tokenService: TokenService
   ) {}
   loginForm: FormGroup;
   ngOnInit(): void {
@@ -48,8 +51,8 @@ export class LoginComponent implements OnInit {
     this.companyService.login(userInfor).subscribe(
       (res) => {
         if (res.token) {
-          localStorage.setItem('token', res.token);
           this.showError = false;
+          this.tokenService.setWithExpiry('token', res.token, 3600);
           this.userService.user = true;
           this.companyService.getCompany().subscribe((res) => {
             if (res.status) {
@@ -62,6 +65,7 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         this.showError = true;
+        debugger;
       }
     );
   }

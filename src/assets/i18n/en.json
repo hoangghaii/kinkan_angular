@@ -49,5 +49,8 @@
   "done": "Done",
   "updated": "Your contract has been successfully updated",
   "downloadGuideline": "Please read more about \"KinKan manual\"",
-  "plzLoginAgain": "Your login session has expired, please login again"
+  "plzLoginAgain": "Your login session has expired, please login again",
+  "login": "Login",
+  "logout": "Logout",
+  "changePw": "Change Password"
 }
