@@ -142,6 +142,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Kinkan"
+    }
+  },
+  "defaultProject": "Kinkan",
+  "cli": {
+    "analytics": "7ccdf9d0-0009-4dac-a5bc-b059e00b56f7"
+  }
 }

@@ -1,5 +1,5 @@
 <header class="header">
-  <nav class="header-menu">
+  <div class="header-menu">
     <div class="header__logo-box">
       <img
         src="./assets/img/kinkan-logo.png"
@@ -8,26 +8,24 @@
         title="logo kinkan"
       />
     </div>
-    <ul class="header-nav">
-      <li class="header-nav__item header-nav__item--active">
-        <a
-          [routerLink]="['/company-infor/fill']"
-          class="header-nav__link"
-          title="New Contract"
-        >
-          <svg class="header-nav__icon">
-            <use xlink:href="./assets/img/defs.svg#icon-open-book"></use>
-          </svg>
-          <span *ngIf="!userService.user" class="header-nav__text"
-            >{{ "newContract" | translate }}
-          </span>
-          <span *ngIf="userService.user" class="header-nav__text"
-            >{{ "yourContract" | translate }}
-          </span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+    <div class="header-heading">
+      <div
+        [routerLink]="['/company-infor/fill']"
+        class="header-heading__link"
+        title="New Contract"
+      >
+        <svg class="header-heading__icon">
+          <use xlink:href="./assets/img/defs.svg#icon-open-book"></use>
+        </svg>
+        <span *ngIf="!userService.user" class="header-heading__text"
+          >{{ "newContract" | translate }}
+        </span>
+        <span *ngIf="userService.user" class="header-heading__text"
+          >{{ "yourContract" | translate }}
+        </span>
+      </div>
+    </div>
+  </div>
 
   <div class="header--box__left">
     <div class="header__language-box">
@@ -72,7 +70,7 @@
         <div class="modal">
           <div class="modal__user-box">
             <div class="modal__user-info">
-              <span class="modal__user-name">{{userLogin?.pic_name}} </span>
+              <span class="modal__user-name">{{ userLogin?.pic_name }} </span>
             </div>
             <div class="modal__img-box">
               <img
@@ -90,10 +88,14 @@
                 xlink:href="./assets/img/symbol-defs.svg#icon-sound-mix"
               ></use>
             </svg>
-            <span class="modal__changePass-heading">{{ "changePw" | translate }}</span>
+            <span class="modal__changePass-heading">
+              {{ "changePw" | translate }}
+            </span>
           </a>
 
-          <button class="btn btn__logout" (click)="logOut()" >{{ "logout" | translate }}</button>
+          <button class="btn btn__logout" (click)="logOut()">
+            {{ "logout" | translate }}
+          </button>
         </div>
       </div>
     </div>

@@ -85,9 +85,14 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   margin: 3rem 14rem;
-  margin-top: 7.6rem;
+  margin-top: 10rem !important;
   cursor: default;
   position: relative;
+}
+@media only screen and (max-width: 640px) {
+  .heading-primary {
+    margin: 1rem 6rem;
+  }
 }
 .heading-primary::after {
   content: "";
@@ -201,7 +206,8 @@ body {
 .guildline {
   display: block;
   padding: 1rem 4rem 4rem;
-  width: 95rem;
+  width: 100%;
+  max-width: 95rem;
   min-height: 73vh;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -210,6 +216,12 @@ body {
   border-radius: 1.5rem;
   background-color: #fff;
   z-index: 2;
+}
+@media only screen and (max-width: 764px) {
+  .guildline {
+    max-width: 100%;
+    box-shadow: none;
+  }
 }
 .guildline__step--item {
   margin-top: 1rem;
@@ -393,13 +405,13 @@ body {
 }
 
 .header {
-  height: 7.6rem;
-  padding: 1rem 3rem 0;
+  height: 9rem;
+  padding: 0 3rem;
   position: relative;
 }
 @media only screen and (max-width: 1200px) {
   .header {
-    padding: 1rem 0 0;
+    padding: 0;
   }
 }
 .header::after {
@@ -417,6 +429,11 @@ body {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 640px) {
+  .header-menu {
+    flex: 1;
+  }
+}
 .header__user-logo--box {
   width: 5rem;
   margin-right: 4rem;
@@ -427,7 +444,7 @@ body {
   max-width: 100%;
 }
 .header__logo-box {
-  width: 5rem;
+  width: 6rem;
   margin-right: 4rem;
   margin-left: 1rem;
 }
@@ -435,20 +452,10 @@ body {
   width: 100%;
   max-width: 100%;
 }
-.header-nav {
-  list-style: none;
+.header-heading {
   font-size: 1.4rem;
-  display: flex;
-  align-items: center;
 }
-.header-nav__item {
-  position: relative;
-}
-.header-nav__item:not(:last-child) {
-  margin-right: 2rem;
-}
-.header-nav__link:link,
-.header-nav__link:visited {
+.header-heading__link {
   position: relative;
   color: #333;
   text-decoration: none;
@@ -456,49 +463,50 @@ body {
   display: flex;
   align-items: center;
 }
-.header-nav__icon {
-  width: 2rem;
-  height: 2rem;
-  fill: #777;
-  transition: all 0.25s;
-  margin-right: 0.5rem;
-}
-.header-nav__item--active::before {
+.header-heading__link::before {
   content: "";
   position: absolute;
   bottom: 0.6rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 1.5rem;
+  width: 3.5rem;
   height: 2.5px;
   border-radius: 20rem;
   background-color: #e7516f;
 }
-.header-nav__item--active .header-nav__icon,
-.header-nav__item:hover .header-nav__icon {
+.header-heading__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: #777;
+  transition: all 0.25s;
+  margin-right: 0.5rem;
+}
+.header-heading__link:hover .header-heading__icon {
   fill: #e7516f;
 }
-.header-nav__text {
+.header-heading__text {
   color: #777;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-top: 3px;
-  position: relative;
 }
-.header-nav__item--active .header-nav__text,
-.header-nav__item:hover .header-nav__text {
+.header-heading__link:hover .header-heading__text {
   color: #e7516f;
 }
-@media only screen and (max-width: 576px) {
-  .header-nav {
-    display: none;
-  }
-}
+
 .header--box__left {
   margin-left: auto;
   margin-right: 2.5rem;
   display: flex;
   align-items: center;
+}
+
+@media only screen and (max-width: 640px) {
+  .header__language-box {
+    position: fixed;
+    top: 10rem;
+    right: 2.5rem;
+    z-index: 99;
+  }
 }
 
 .header__language-parent {
@@ -600,7 +608,7 @@ body {
   background-color: #fff;
   width: 100%;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 640px) {
   .header {
     width: 100%;
   }
@@ -785,10 +793,11 @@ body {
 .footer {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 10rem;
-  background-color: #223e5cde;
+  background-color: rgba(23, 70, 119, 0.54);
   color: #fff;
 }
 .footer__heading {
@@ -815,6 +824,26 @@ body {
 }
 .footer__link:active {
   transform: translateY(0.2rem);
+}
+@media only screen and (max-width: 640px) {
+  .footer {
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footer {
+    padding: 1rem 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer__left {
+    margin: 0.6rem;
+  }
+
+  .copyright {
+    margin: 0.6rem;
+  }
 }
 
 /* ----- sweet alert ----- */
